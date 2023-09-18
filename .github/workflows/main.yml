@@ -2,8 +2,8 @@ name: Postman collection workflow test
 on:
   push:
     branches:
-      -main
-      -feature/*
+      - main
+      - feature/*
 jobs:
   newman_run: 
     runs-on: ubuntu-latest
