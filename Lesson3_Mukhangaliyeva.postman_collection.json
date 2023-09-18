@@ -1,0 +1,5584 @@
+{
+	"info": {
+		"_postman_id": "a7599622-9b1f-4437-9140-5a268d10444c",
+		"name": "Lesson3_Mukhangaliyeva",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29452963"
+	},
+	"item": [
+		{
+			"name": "Lecture 3",
+			"item": [
+				{
+					"name": "Session",
+					"item": [
+						{
+							"name": "Get admin token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// testing if the length of the request is less than 1 second\r",
+											"pm.test(\"Response time is less than 5000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+											"});\r",
+											"\r",
+											"// testing if request is successful\r",
+											"pm.test(\"Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.equal(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Lyazzat.M\",\r\n    \"password\": \"StrongPassword123!\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/session",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"session"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get a teacher token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// testing if the length of the request is less than 1 second\r",
+											"pm.test(\"Response time is less than 5000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+											"});\r",
+											"\r",
+											"// testing if request is successful\r",
+											"pm.test(\"Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.equal(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"AwesomeTeacher1\",\r\n    \"password\": \"StrongPassword123!\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/session",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"session"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get a student token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// testing if the length of the request is less than 1 second\r",
+											"pm.test(\"Response time is less than 5000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+											"});\r",
+											"\r",
+											"// testing if request is successful\r",
+											"pm.test(\"Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.equal(200);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"AwesomeStudent1\",\r\n    \"password\": \"StrongPassword123!\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/v1/session",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"session"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Lecture 3 Run folder",
+					"item": [
+						{
+							"name": "Api docs and Health",
+							"item": [
+								{
+									"name": "API docs",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Test if the response status code is 200 (OK)\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/api/v1/api-docs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"api-docs"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Health",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"//Testing the response status code\r",
+													"pm.test(\"Status code is 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"//Testing response time\r",
+													"pm.test(\"Response time is less than 5000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+													"});\r",
+													"\r",
+													"//Testing if response contains 'result' field\r",
+													"pm.test(\"Response contains 'result' field\", function () {\r",
+													"    pm.expect(pm.response.json()).to.have.property('result');\r",
+													"});\r",
+													"\r",
+													"//Testing if the result field only contains 2 entries. This test catches the bug.\r",
+													"pm.test(\"Result field contains exactly 2 entries\", function () {\r",
+													"    const result = pm.response.json().result;\r",
+													"    pm.expect(Object.keys(result).length).to.equal(2);\r",
+													"});\r",
+													"\r",
+													"//This test checks if the result has 'status' and 'current date' fields, but does not account for the extra field. According to the documentation, the 'version' field should not be there. This test will fail to catch it.\r",
+													"pm.test(\"Response contains 'status', 'currentDate' fields within 'result'\", function () {\r",
+													"    const result = pm.response.json().result;\r",
+													"    pm.expect(result).to.have.property('status');\r",
+													"    pm.expect(result).to.have.property('currentDate');\r",
+													"});\r",
+													"\r",
+													"//Testing the current date\r",
+													"pm.test(\"currentDate is a valid date\", function () {\r",
+													"    const currentDate = pm.response.json().result.currentDate;\r",
+													"    pm.expect(new Date(currentDate)).to.be.a('Date');\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/api/v1/health",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"health"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Users",
+							"item": [
+								{
+									"name": "Admin can create users with valid credentials",
+									"item": [
+										{
+											"name": "create admin valid credentials",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// Test if the response status code is 200 (OK)\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"// check if the response body has all the neccessary fields provided in the documentation\r",
+															"pm.test(\"Response contains 'id' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property('id');\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response contains 'username' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property('username');\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response contains 'email' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property('email');\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response contains 'firstName' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property('firstName');\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response contains 'lastName' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property('lastName');\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response contains 'role' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property('role');\r",
+															"});\r",
+															"\r",
+															"//This is a bug, the test is expected to fail\r",
+															"pm.test(\"Response contains 'updatedAt' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property('updatedAt');\r",
+															"});\r",
+															"\r",
+															"//This is a bug, the test is expected to fail\r",
+															"pm.test(\"Response contains 'createdAt' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property('createdAt');\r",
+															"});\r",
+															"\r",
+															"//testing if 'id' is a number\r",
+															"pm.test(\"Check if 'id' is a number\", function () {\r",
+															"    const responseBody = pm.response.json();\r",
+															"    pm.expect(typeof responseBody.id).to.equal(\"number\");\r",
+															"});\r",
+															"\r",
+															"// testinf if 'firstName' and 'lastName' fields contain only letters and special characters.\r",
+															"pm.test(\"Check if 'firstName' and 'lastname' contain letters and special characters\", function () {\r",
+															"    const responseBody = pm.response.json(); \r",
+															"    const pattern = /^[A-Za-z!@#$%^&*()_+{}\\[\\]:;<>,.?~\\- ]+$/;\r",
+															"    pm.expect(pattern.test(responseBody.firstName)).to.be.true;\r",
+															"    pm.expect(pattern.test(responseBody.lastName)).to.be.true;\r",
+															"});\r",
+															"\r",
+															"// Check if the 'username', 'firstName', 'lastName' field is a string\r",
+															"pm.test(\"Check if 'username' is a string\", function () {\r",
+															"    const responseBody = pm.response.json(); \r",
+															"    pm.expect(typeof responseBody.username).to.equal(\"string\");\r",
+															"    pm.expect(typeof responseBody.firstName).to.equal(\"string\");\r",
+															"    pm.expect(typeof responseBody.lastName).to.equal(\"string\");\r",
+															"});\r",
+															"\r",
+															"// Check if username', 'firstName', 'lastName' lengths are within t1-255 characters\r",
+															"pm.test(\"Check username length\", function () {\r",
+															"    const responseBody = pm.response.json();\r",
+															"    pm.expect(responseBody.username.length).to.be.within(1, 255);\r",
+															"    pm.expect(responseBody.firstName.length).to.be.within(1, 255);\r",
+															"    pm.expect(responseBody.lastName.length).to.be.within(1, 255);\r",
+															"});\r",
+															"\r",
+															"// Check if the 'role' field is equal to 1\r",
+															"//This test FAILS because of the bug. The admin and student roles are switched (1 and 3)\r",
+															"pm.test(\"Check if 'role' is equal to 3\", function () {\r",
+															"    const responseBody = pm.response.json();\r",
+															"    pm.expect(responseBody.role).to.equal(1);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Admin bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"username\": \"{{$randomNoun}}{{$randomAlphaNumeric}}{{$randomNoun}}\",\r\n    \"firstName\": \"{{$randomNoun}}\",\r\n    \"lastName\": \"{{$randomVerb}}\",\r\n    \"email\": \"{{$randomAlphaNumeric}}{{$randomEmail}}\",\r\n    \"password\": \"{{$randomPassword}}\",\r\n    \"role\": \"admin\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/users",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "create teacher with valid credentials",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// Test if the response status code is 200 (OK)\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"// check if the response body has all the neccessary fields provided in the documentation\r",
+															"pm.test(\"Response contains 'id' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property('id');\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response contains 'username' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property('username');\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response contains 'email' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property('email');\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response contains 'firstName' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property('firstName');\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response contains 'lastName' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property('lastName');\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response contains 'role' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property('role');\r",
+															"});\r",
+															"\r",
+															"//This is a bug, the test is expected to fail\r",
+															"pm.test(\"Response contains 'updatedAt' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property('updatedAt');\r",
+															"});\r",
+															"\r",
+															"//This is a bug, the test is expected to fail\r",
+															"pm.test(\"Response contains 'createdAt' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property('createdAt');\r",
+															"});\r",
+															"\r",
+															"//testing if 'id' is a number\r",
+															"pm.test(\"Check if 'id' is a number\", function () {\r",
+															"    const responseBody = pm.response.json();\r",
+															"    pm.expect(typeof responseBody.id).to.equal(\"number\");\r",
+															"});\r",
+															"\r",
+															"// testinf if 'firstName' and 'lastName' fields contain only letters and special characters. Why special characters you might ask? Because some first and last names might inlude \"-\" or \"'\". I haven't thought about it for my previous homeworks\r",
+															"pm.test(\"Check if 'firstName' and 'lastname' contain letters and special characters\", function () {\r",
+															"    const responseBody = pm.response.json(); \r",
+															"    const pattern = /^[A-Za-z!@#$%^&*()_+{}\\[\\]:;<>,.?~\\- ]+$/;\r",
+															"    pm.expect(pattern.test(responseBody.firstName)).to.be.true;\r",
+															"    pm.expect(pattern.test(responseBody.lastName)).to.be.true;\r",
+															"});\r",
+															"\r",
+															"\r",
+															"// Check if the 'username', 'firstName', 'lastName' field is a string\r",
+															"pm.test(\"Check if 'username' is a string\", function () {\r",
+															"    const responseBody = pm.response.json(); \r",
+															"    pm.expect(typeof responseBody.username).to.equal(\"string\");\r",
+															"    pm.expect(typeof responseBody.firstName).to.equal(\"string\");\r",
+															"    pm.expect(typeof responseBody.lastName).to.equal(\"string\");\r",
+															"});\r",
+															"\r",
+															"// Check if username', 'firstName', 'lastName' lengths are within t1-255 characters\r",
+															"pm.test(\"Check username length\", function () {\r",
+															"    const responseBody = pm.response.json();\r",
+															"    pm.expect(responseBody.username.length).to.be.within(1, 255);\r",
+															"    pm.expect(responseBody.firstName.length).to.be.within(1, 255);\r",
+															"    pm.expect(responseBody.lastName.length).to.be.within(1, 255);\r",
+															"});\r",
+															"\r",
+															"// Check if the 'role' field is equal to 2\r",
+															"pm.test(\"Check if 'role' is equal to 2\", function () {\r",
+															"    const responseBody = pm.response.json();\r",
+															"    pm.expect(responseBody.role).to.equal(2);\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Admin bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"username\": \"{{$randomNoun}}{{$randomAlphaNumeric}}{{$randomNoun}}\",\r\n    \"firstName\": \"{{$randomNoun}}\",\r\n    \"lastName\": \"{{$randomVerb}}\",\r\n    \"email\": \"{{$randomAlphaNumeric}}{{$randomEmail}}\",\r\n    \"password\": \"{{$randomPassword}}\",\r\n    \"role\": \"teacher\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/users",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "create student with valid credentials",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// Test if the response status code is 200 (OK)\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"// check if the response body has all the neccessary fields provided in the documentation\r",
+															"pm.test(\"Response contains 'id' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property('id');\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response contains 'username' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property('username');\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response contains 'email' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property('email');\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response contains 'firstName' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property('firstName');\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response contains 'lastName' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property('lastName');\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response contains 'role' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property('role');\r",
+															"});\r",
+															"\r",
+															"//This is a bug, the test is expected to fail\r",
+															"pm.test(\"Response contains 'updatedAt' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property('updatedAt');\r",
+															"});\r",
+															"\r",
+															"//This is a bug, the test is expected to fail\r",
+															"pm.test(\"Response contains 'createdAt' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property('createdAt');\r",
+															"});\r",
+															"\r",
+															"//testing if 'id' is a number\r",
+															"pm.test(\"Check if 'id' is a number\", function () {\r",
+															"    const responseBody = pm.response.json();\r",
+															"    pm.expect(typeof responseBody.id).to.equal(\"number\");\r",
+															"});\r",
+															"\r",
+															"// testinf if 'firstName' and 'lastName' fields contain only letters and special characters. Why special characters you might ask? Because some first and last names might inlude \"-\" or \"'\". I haven't thought about it for my previous homeworks\r",
+															"pm.test(\"Check if 'firstName' and 'lastname' contain letters and special characters\", function () {\r",
+															"    const responseBody = pm.response.json(); \r",
+															"    const pattern = /^[A-Za-z!@#$%^&*()_+{}\\[\\]:;<>,.?~\\- ]+$/;\r",
+															"    pm.expect(pattern.test(responseBody.firstName)).to.be.true;\r",
+															"    pm.expect(pattern.test(responseBody.lastName)).to.be.true;\r",
+															"});\r",
+															"\r",
+															"\r",
+															"// Check if the 'username', 'firstName', 'lastName' field is a string\r",
+															"pm.test(\"Check if 'username' is a string\", function () {\r",
+															"    const responseBody = pm.response.json(); \r",
+															"    pm.expect(typeof responseBody.username).to.equal(\"string\");\r",
+															"    pm.expect(typeof responseBody.firstName).to.equal(\"string\");\r",
+															"    pm.expect(typeof responseBody.lastName).to.equal(\"string\");\r",
+															"});\r",
+															"\r",
+															"// Check if username', 'firstName', 'lastName' lengths are within t1-255 characters\r",
+															"pm.test(\"Check username, first and last names  length\", function () {\r",
+															"    const responseBody = pm.response.json();\r",
+															"    pm.expect(responseBody.username.length).to.be.within(1, 255);\r",
+															"    pm.expect(responseBody.firstName.length).to.be.within(1, 255);\r",
+															"    pm.expect(responseBody.lastName.length).to.be.within(1, 255);\r",
+															"});\r",
+															"\r",
+															"\r",
+															"// Check if the 'role' field is equal to 3\r",
+															"// This test fails as there is a bug raised during last howmework (not by me)\r",
+															"pm.test(\"Check if 'role' is equal to 3\", function () {\r",
+															"    const responseBody = pm.response.json();\r",
+															"    pm.expect(responseBody.role).to.equal(3);\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Admin bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"username\": \"{{$randomNoun}}{{$randomAlphaNumeric}}{{$randomNoun}}\",\r\n    \"firstName\": \"{{$randomNoun}}\",\r\n    \"lastName\": \"{{$randomVerb}}\",\r\n    \"email\": \"{{$randomAlphaNumeric}}{{$randomEmail}}\",\r\n    \"password\": \"{{$randomPassword}}\",\r\n    \"role\": \"student\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/users",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Testing first and last name fields",
+									"item": [
+										{
+											"name": "create admin space inst first and last names",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// Test if the response status code is 200 (OK)\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"// Test if 'firstName' contains only spaces or empty\r",
+															"pm.test(\"FirstName contains only spaces or empty\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    const firstName = response.firstName;\r",
+															"    \r",
+															"    pm.expect(firstName).to.match(/^\\s*$/);\r",
+															"});\r",
+															"\r",
+															"// Test if 'lastName' contains only spaces or empty\r",
+															"pm.test(\"LastName contains only spaces or empty\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    const lastName = response.lastName;\r",
+															"\r",
+															"    pm.expect(lastName).to.match(/^\\s*$/);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Admin bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"username\": \"{{$randomAlphaNumeric}}{{$randomNoun}}{{$randomAlphaNumeric}}\",\r\n    \"firstName\": \" \",\r\n    \"lastName\": \" \",\r\n    \"email\": \"{{$randomAlphaNumeric}}{{$randomEmail}}\",\r\n    \"password\": \"{{$randomPassword}}\",\r\n    \"role\": \"admin\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/users",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "create admin with empty first and last names",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// Test if the response status code is 200 (OK)\r",
+															"pm.test(\"Status code is 200\", function () {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"// Test if 'firstName' contains only spaces or empty\r",
+															"pm.test(\"FirstName contains only spaces or empty\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    const firstName = response.firstName;\r",
+															"    \r",
+															"    pm.expect(firstName).to.match(/^\\s*$/);\r",
+															"});\r",
+															"\r",
+															"// Test if 'lastName' contains only spaces or empty\r",
+															"pm.test(\"LastName contains only spaces or empty\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    const lastName = response.lastName;\r",
+															"\r",
+															"    pm.expect(lastName).to.match(/^\\s*$/);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Admin bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"username\": \"{{$randomAlphaNumeric}}{{$randomNoun}}{{$randomAlphaNumeric}}\",\r\n    \"firstName\": \"\",\r\n    \"lastName\": \"\",\r\n    \"email\": \"{{$randomAlphaNumeric}}{{$randomEmail}}\",\r\n    \"password\": \"{{$randomPassword}}\",\r\n    \"role\": \"admin\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/users",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "create admin with numbers in first and last names field",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request is successful\r",
+															"\r",
+															"pm.test(\"Successful POST request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(200);\r",
+															"});\r",
+															"\r",
+															"// Test if 'firstName' contains numbers\r",
+															"pm.test(\"FirstName contains numbers\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    const firstName = response.firstName;\r",
+															"\r",
+															"    // Use a regular expression to check if 'firstName' contains at least one number\r",
+															"    pm.expect(firstName).to.match(/\\d/);\r",
+															"});\r",
+															"\r",
+															"// Test if 'lastName' contains numbers\r",
+															"pm.test(\"LastName contains numbers\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    const lastName = response.lastName;\r",
+															"\r",
+															"    // Use a regular expression to check if 'lastName' contains at least one number\r",
+															"    pm.expect(lastName).to.match(/\\d/);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Admin bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"username\": \"{{$randomAlphaNumeric}}{{$randomNoun}}{{$randomAlphaNumeric}}\",\r\n    \"firstName\": \"{{$randomHexColor}}\",\r\n    \"lastName\": \"{{$randomPhoneNumberExt}}\",\r\n    \"email\": \"{{$randomAlphaNumeric}}{{$randomEmail}}\",\r\n    \"password\": \"{{$randomPassword}}\",\r\n    \"role\": \"admin\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/users",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "create admin with special characters in first and last names fields",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request is successful\r",
+															"pm.test(\"Successful POST request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(200);\r",
+															"});\r",
+															"\r",
+															"// Test if 'firstName' contains special characters\r",
+															"pm.test(\"FirstName contains special characters\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    const firstName = response.firstName;\r",
+															"\r",
+															"    // Use a regular expression to check if 'firstName' contains any special characters\r",
+															"    pm.expect(firstName).to.match(/[!@#$%^&*()_+{}\\[\\]:;<>,.?~\\\\]/);\r",
+															"});\r",
+															"\r",
+															"// Test if 'lastName' contains special characters\r",
+															"pm.test(\"LastName contains special characters\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    const lastName = response.lastName;\r",
+															"\r",
+															"    // Use a regular expression to check if 'lastName' contains any special characters\r",
+															"    pm.expect(lastName).to.match(/[!@#$%^&*()_+{}\\[\\]:;<>,.?~\\\\]/);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Admin bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"username\": \"{{$randomAlphaNumeric}}{{$randomNoun}}{{$randomAlphaNumeric}}\",\r\n    \"firstName\": \"@\",\r\n    \"lastName\": \"@\",\r\n    \"email\": \"{{$randomAlphaNumeric}}{{$randomEmail}}\",\r\n    \"password\": \"{{$randomPassword}}\",\r\n    \"role\": \"admin\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/users",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Testing username field",
+									"item": [
+										{
+											"name": "empty username",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// Test if the response status code is 400 Bad reuqest due to minimum length requirement\r",
+															"pm.test(\"Status code is 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Admin bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"username\": \"\",\r\n    \"firstName\": \"{{$randomNoun}}\",\r\n    \"lastName\": \"{{$randomVerb}}\",\r\n    \"email\": \"{{$randomAlphaNumeric}}{{$randomEmail}}\",\r\n    \"password\": \"{{$randomPassword}}\",\r\n    \"role\": \"teacher\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/users",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "space in username",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request has 400 Bad request status due to minumum length length requirement\r",
+															"pm.test(\"400 Bad request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Admin bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"username\": \" \",\r\n    \"firstName\": \"{{$randomNoun}}\",\r\n    \"lastName\": \"{{$randomVerb}}\",\r\n    \"email\": \"{{$randomAlphaNumeric}}{{$randomEmail}}\",\r\n    \"password\": \"{{$randomPassword}}\",\r\n    \"role\": \"teacher\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/users",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "username with 1 character",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request has 400 Bad request status due to minimum length requirement\r",
+															"pm.test(\"400 Bad request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															"// Generate a random string of 1 character\r",
+															"const random1char = generateRandom1char(1);\r",
+															"\r",
+															"// Set the random string as an environment variable\r",
+															"pm.environment.set(\"random1char\", random1char);\r",
+															"\r",
+															"function generateRandom1char(length) {\r",
+															"    const characters = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";\r",
+															"    let result = \"\";\r",
+															"    for (let i = 0; i < length; i++) {\r",
+															"        const randomIndex = Math.floor(Math.random() * characters.length);\r",
+															"        result += characters.charAt(randomIndex);\r",
+															"    }\r",
+															"    return result;\r",
+															"}"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Admin bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"username\": \"A\",\r\n    \"firstName\": \"{{$randomNoun}}\",\r\n    \"lastName\": \"{{$randomVerb}}\",\r\n    \"email\": \"{{$randomAlphaNumeric}}{{$randomEmail}}\",\r\n    \"password\": \"{{$randomPassword}}\",\r\n    \"role\": \"teacher\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/users",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "username with 2 characters",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request has 400 Bad request status due to minimum length requirement\r",
+															"pm.test(\"400 Bad request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															"// Generate a random string of 2 characters\r",
+															"const random2chars = generateRandom2chars(2);\r",
+															"\r",
+															"// Set the random string as an environment variable\r",
+															"pm.environment.set(\"random2chars\", random2chars);\r",
+															"\r",
+															"function generateRandom2chars(length) {\r",
+															"    const characters = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";\r",
+															"    let result = \"\";\r",
+															"    for (let i = 0; i < length; i++) {\r",
+															"        const randomIndex = Math.floor(Math.random() * characters.length);\r",
+															"        result += characters.charAt(randomIndex);\r",
+															"    }\r",
+															"    return result;\r",
+															"}"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Admin bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"username\": \"{{random2chars}}\",\r\n    \"firstName\": \"{{$randomNoun}}\",\r\n    \"lastName\": \"{{$randomVerb}}\",\r\n    \"email\": \"{{$randomAlphaNumeric}}{{$randomEmail}}\",\r\n    \"password\": \"{{$randomPassword}}\",\r\n    \"role\": \"teacher\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/users",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "username with 3 characters",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request is successful\r",
+															"pm.test(\"Successful POST request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(200);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															"// Generate a random string of 3 characters\r",
+															"const random3chars = generateRandom3chars(3);\r",
+															"\r",
+															"// Set the random string as an environment variable\r",
+															"pm.environment.set(\"random3chars\", random3chars);\r",
+															"\r",
+															"function generateRandom3chars(length) {\r",
+															"    const characters = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";\r",
+															"    let result = \"\";\r",
+															"    for (let i = 0; i < length; i++) {\r",
+															"        const randomIndex = Math.floor(Math.random() * characters.length);\r",
+															"        result += characters.charAt(randomIndex);\r",
+															"    }\r",
+															"    return result;\r",
+															"}"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Admin bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"username\": \"{{random3chars}}\",\r\n    \"firstName\": \"{{$randomNoun}}\",\r\n    \"lastName\": \"{{$randomVerb}}\",\r\n    \"email\": \"{{$randomAlphaNumeric}}{{$randomEmail}}\",\r\n    \"password\": \"{{$randomPassword}}\",\r\n    \"role\": \"teacher\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/users",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "username with 255 characters",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request is successful\r",
+															"pm.test(\"Successful POST request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(200);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															"// Generate a random string of 255 characters\r",
+															"const random255chars = generateRandom255chars(255);\r",
+															"\r",
+															"// Set the random string as an environment variable\r",
+															"pm.environment.set(\"random255chars\", random255chars);\r",
+															"\r",
+															"function generateRandom255chars(length) {\r",
+															"    const characters = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";\r",
+															"    let result = \"\";\r",
+															"    for (let i = 0; i < length; i++) {\r",
+															"        const randomIndex = Math.floor(Math.random() * characters.length);\r",
+															"        result += characters.charAt(randomIndex);\r",
+															"    }\r",
+															"    return result;\r",
+															"}"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Admin bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"username\": \"{{random255chars}}\",\r\n    \"firstName\": \"{{$randomNoun}}\",\r\n    \"lastName\": \"{{$randomVerb}}\",\r\n    \"email\": \"{{$randomAlphaNumeric}}{{$randomEmail}}\",\r\n    \"password\": \"{{$randomPassword}}\",\r\n    \"role\": \"teacher\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/users",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "username with 256 characters Copy",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request returns 400 Bad request status\r",
+															"pm.test(\"400 Bad request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															"// Generate a random string of 256 characters\r",
+															"const random256chars = generateRandom256chars(256);\r",
+															"\r",
+															"// Set the random string as an environment variable\r",
+															"pm.environment.set(\"random256chars\", random256chars);\r",
+															"\r",
+															"function generateRandom256chars(length) {\r",
+															"    const characters = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";\r",
+															"    let result = \"\";\r",
+															"    for (let i = 0; i < length; i++) {\r",
+															"        const randomIndex = Math.floor(Math.random() * characters.length);\r",
+															"        result += characters.charAt(randomIndex);\r",
+															"    }\r",
+															"    return result;\r",
+															"}"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Admin bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"username\": \"{{random256chars}}\", \r\n    \"firstName\": \"{{$randomNoun}}\",\r\n    \"lastName\": \"{{$randomVerb}}\",\r\n    \"email\": \"{{$randomAlphaNumeric}}{{$randomEmail}}\",\r\n    \"password\": \"{{$randomPassword}}\",\r\n    \"role\": \"teacher\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/users",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Testing password field",
+									"item": [
+										{
+											"name": "Empty password field",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request has 400 Bad request status due to minimal length requirement\r",
+															"pm.test(\"400 Bad request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Password is less than 8 characters long\", function () {\r",
+															"    const password = pm.request.body.raw.match(/\"password\": \"(.*?)\"/)[1];\r",
+															"    pm.expect(password.length).to.be.lessThan(8);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Admin bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"username\": \"{{$randomAlphaNumeric}}{{$randomNoun}}{{$randomAlphaNumeric}}\",\r\n    \"firstName\": \"{{$randomNoun}}\",\r\n    \"lastName\": \"{{$randomVerb}}\",\r\n    \"email\": \"{{$randomAlphaNumeric}}{{$randomEmail}}\",\r\n    \"password\": \"\",\r\n    \"role\": \"student\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/users",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Space in password field",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request has 400 Bad request status due to minimal length\r",
+															"pm.test(\"400 Bad request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Password is less than 8 characters long\", function () {\r",
+															"    const password = pm.request.body.raw.match(/\"password\": \"(.*?)\"/)[1];\r",
+															"    pm.expect(password.length).to.be.lessThan(8);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Admin bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"username\": \"{{$randomAlphaNumeric}}{{$randomNoun}}{{$randomAlphaNumeric}}\",\r\n    \"firstName\": \"{{$randomNoun}}\",\r\n    \"lastName\": \"{{$randomVerb}}\",\r\n    \"email\": \"{{$randomAlphaNumeric}}{{$randomEmail}}\",\r\n    \"password\": \" \",\r\n    \"role\": \"student\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/users",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "7 characters in password field",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request has 400 Bad request status due to minimal length requirement\r",
+															"pm.test(\"400 Bad request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Password is less than 8 characters long\", function () {\r",
+															"    const password = pm.request.body.raw.match(/\"password\": \"(.*?)\"/)[1];\r",
+															"    pm.expect(password.length).to.be.lessThan(8);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															"// Generate a random string of 7 characters\r",
+															"const random7chars = generateRandom7chars(7);\r",
+															"\r",
+															"// Set the random string as an environment variable\r",
+															"pm.environment.set(\"random7chars\", random7chars);\r",
+															"\r",
+															"function generateRandom7chars(length) {\r",
+															"    const characters = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";\r",
+															"    let result = \"\";\r",
+															"    for (let i = 0; i < length; i++) {\r",
+															"        const randomIndex = Math.floor(Math.random() * characters.length);\r",
+															"        result += characters.charAt(randomIndex);\r",
+															"    }\r",
+															"    return result;\r",
+															"}"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Admin bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"username\": \"{{$randomAlphaNumeric}}{{$randomNoun}}{{$randomAlphaNumeric}}\",\r\n    \"firstName\": \"{{$randomNoun}}\",\r\n    \"lastName\": \"{{$randomVerb}}\",\r\n    \"email\": \"{{$randomAlphaNumeric}}{{$randomEmail}}\",\r\n    \"password\": \"{{random7chars}}\",\r\n    \"role\": \"student\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/users",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "8 characters in password field",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request is successful\r",
+															"pm.test(\"Successful POST request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Password is at least 8 characters long\", function () {\r",
+															"    const password = pm.request.body.raw.match(/\"password\": \"(.*?)\"/)[1];\r",
+															"    pm.expect(password.length).to.be.at.least(8);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															"// Generate a random string of 8 characters\r",
+															"const random8chars = generateRandom8chars(8);\r",
+															"\r",
+															"// Set the random string as an environment variable\r",
+															"pm.environment.set(\"random8chars\", random8chars);\r",
+															"\r",
+															"function generateRandom8chars(length) {\r",
+															"    const characters = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";\r",
+															"    let result = \"\";\r",
+															"    for (let i = 0; i < length; i++) {\r",
+															"        const randomIndex = Math.floor(Math.random() * characters.length);\r",
+															"        result += characters.charAt(randomIndex);\r",
+															"    }\r",
+															"    return result;\r",
+															"}"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Admin bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"username\": \"{{$randomAlphaNumeric}}{{$randomNoun}}{{$randomAlphaNumeric}}\",\r\n    \"firstName\": \"{{$randomNoun}}\",\r\n    \"lastName\": \"{{$randomVerb}}\",\r\n    \"email\": \"{{$randomAlphaNumeric}}{{$randomEmail}}\",\r\n    \"password\": \"{{random8chars}}\",\r\n    \"role\": \"student\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/users",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "20 characters in password field",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request is successful\r",
+															"pm.test(\"Successful POST request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Password is at least 20 characters long\", function () {\r",
+															"    const password = pm.request.body.raw.match(/\"password\": \"(.*?)\"/)[1];\r",
+															"    pm.expect(password.length).to.be.at.least(20);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															"// Generate a random string of 20 characters\r",
+															"const random20chars = generateRandom20chars(20);\r",
+															"\r",
+															"// Set the random string as an environment variable\r",
+															"pm.environment.set(\"random20chars\", random20chars);\r",
+															"\r",
+															"function generateRandom20chars(length) {\r",
+															"    const characters = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";\r",
+															"    let result = \"\";\r",
+															"    for (let i = 0; i < length; i++) {\r",
+															"        const randomIndex = Math.floor(Math.random() * characters.length);\r",
+															"        result += characters.charAt(randomIndex);\r",
+															"    }\r",
+															"    return result;\r",
+															"}"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Admin bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"username\": \"{{$randomAlphaNumeric}}{{$randomNoun}}{{$randomAlphaNumeric}}\",\r\n    \"firstName\": \"{{$randomNoun}}\",\r\n    \"lastName\": \"{{$randomVerb}}\",\r\n    \"email\": \"{{$randomAlphaNumeric}}{{$randomEmail}}\",\r\n    \"password\": \"{{random20chars}}\",\r\n    \"role\": \"student\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/users",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "21 characters in password field",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request has 400 Bad request status\r",
+															"pm.test(\"400 Bad request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Password is more than 20 characters long\", function () {\r",
+															"    const password = pm.request.body.raw.match(/\"password\": \"(.*?)\"/)[1];\r",
+															"    pm.expect(password.length).to.be.greaterThan(20);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															"// Generate a random string of 21 characters\r",
+															"const random21chars = generateRandom21chars(21);\r",
+															"\r",
+															"// Set the random string as an environment variable\r",
+															"pm.environment.set(\"random21chars\", random21chars);\r",
+															"\r",
+															"function generateRandom21chars(length) {\r",
+															"    const characters = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";\r",
+															"    let result = \"\";\r",
+															"    for (let i = 0; i < length; i++) {\r",
+															"        const randomIndex = Math.floor(Math.random() * characters.length);\r",
+															"        result += characters.charAt(randomIndex);\r",
+															"    }\r",
+															"    return result;\r",
+															"}"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Admin bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"username\": \"{{$randomAlphaNumeric}}{{$randomNoun}}{{$randomAlphaNumeric}}\",\r\n    \"firstName\": \"{{$randomNoun}}\",\r\n    \"lastName\": \"{{$randomVerb}}\",\r\n    \"email\": \"{{$randomNoun}}.{{$randomVerb}}@quantori.academy\",\r\n    \"password\": \"{{random21chars}}\",\r\n    \"role\": \"student\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/users",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Testing role field",
+									"item": [
+										{
+											"name": "empty role",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request has 400 Bad request status because wrong role\r",
+															"pm.test(\"400 Bad request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Admin bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"username\": \"{{$randomNoun}}{{$randomAlphaNumeric}}\",\r\n    \"firstName\": \"{{$randomNoun}}\",\r\n    \"lastName\": \"{{$randomVerb}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"{{$randomPassword}}\",\r\n    \"role\": \"\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/users",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Testing email field",
+									"item": [
+										{
+											"name": "Invalid email",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request has 400 Bad request status\r",
+															"pm.test(\"400 Bad request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Admin bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"username\": \"{{$randomNoun}}{{$randomAlphaNumeric}}\",\r\n    \"firstName\": \"{{$randomNoun}}\",\r\n    \"lastName\": \"{{$randomVerb}}\",\r\n    \"email\": \"@\",\r\n    \"password\": \"{{$randomPassword}}\",\r\n    \"role\": \"teacher\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/users",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"users"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							],
+							"auth": {
+								"type": "basic",
+								"basic": [
+									{
+										"key": "password",
+										"value": "{{Password}}",
+										"type": "string"
+									},
+									{
+										"key": "username",
+										"value": "{{Admin username}}",
+										"type": "string"
+									}
+								]
+							},
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							]
+						},
+						{
+							"name": "Categories",
+							"item": [
+								{
+									"name": "Admin AND categories",
+									"item": [
+										{
+											"name": "admin create categories",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request is successful\r",
+															"pm.test(\"Successful POST request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(200);\r",
+															"});\r",
+															"\r",
+															"//testing if 'id' is a number\r",
+															"pm.test(\"Check if 'id' is a number\", function () {\r",
+															"    const responseBody = pm.response.json();\r",
+															"    pm.expect(typeof responseBody.id).to.equal(\"number\");\r",
+															"});\r",
+															"\r",
+															"//testing if response body has all categories given in the documentation: \"id\", \"title\", \"createdAt\", \"updatedAt\"\r",
+															"pm.test(\"Response contains 'id' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property('id');\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response contains 'title' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property('title');\r",
+															"});\r",
+															"\r",
+															"//this test is excpetcted to fail\r",
+															"pm.test(\"Response contains 'updatedAt' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property('updatedAt');\r",
+															"});\r",
+															"//this test is expected to fail\r",
+															"pm.test(\"Response contains 'createdAt' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response).to.have.property('createdAt');\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"title\": \"{{$randomNoun}} {{$randomVerb}}\"\r\n}\r\n",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/categories",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"categories"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "admin can access all categories",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request is successful\r",
+															"pm.test(\"Successful POST request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(200);\r",
+															"});\r",
+															"\r",
+															"//check if the response body has all the fields given in the documentation.\r",
+															"pm.test(\"Check response fields for completeness\", function () {\r",
+															"    const responseBody = pm.response.json();\r",
+															"    const expectedFields = [\"id\", \"title\"];\r",
+															"    expectedFields.forEach(function (field) {\r",
+															"        pm.expect(responseBody[0]).to.have.property(field);\r",
+															"    });\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/categories",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"categories"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Admin can get category by id",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request is successful. Does not fail if such category exists\r",
+															"pm.test(\"Successful POST request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(200);\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/categories/4453",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"categories",
+														"4453"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Admin can delete category by id",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request is successful. This is the dilemma that was discussed in Slack. \r",
+															"// I personnally believe that it should give 404 not found status\r",
+															"pm.test(\"Successful POST request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response contains 'result' with value 'Success: record was removed.'\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    pm.expect(response.result).to.equal(\"Success: record was removed.\");\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/categories/4163",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"categories",
+														"4163"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Admin can delete category 0",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request is successful. \r",
+															"// This test should fail as there should be no category 0. \r",
+															"pm.test(\"Successful POST request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(200);\r",
+															"});\r",
+															"\r",
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/categories/0",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"categories",
+														"0"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Admin can delete category with negative id",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 1 second\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request is successful. \r",
+															"//This test should fail as there shouldn't be category -1\r",
+															"pm.test(\"Successful POST request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(200);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/categories/-1",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"categories",
+														"-1"
+													]
+												}
+											},
+											"response": []
+										}
+									],
+									"auth": {
+										"type": "bearer",
+										"bearer": [
+											{
+												"key": "token",
+												"value": "{{Admin bearer token}}",
+												"type": "string"
+											}
+										]
+									},
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													""
+												]
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													""
+												]
+											}
+										}
+									]
+								},
+								{
+									"name": "Teacher AND categories",
+									"item": [
+										{
+											"name": "Teacher can read categories",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request is successful. \r",
+															"pm.test(\"Successful POST request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(200);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/categories",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"categories"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Teacher can't create category",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request returns 403 Forbidden status\r",
+															"pm.test(\"403 Forbiddent status\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(403);\r",
+															"});\r",
+															"\r",
+															"//\r",
+															"pm.test(\"Response matches expected structure and content\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    const expectedResponse = {\r",
+															"        \"errors\": \"This action is forbidden for role teacher\"\r",
+															"    };\r",
+															"    pm.expect(response).to.eql(expectedResponse);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"title\": \"{{$randomNoun}} {{$randomVerb}}\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/categories",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"categories"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Teacher can't edit category",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request returns 403 Forbidden status\r",
+															"pm.test(\"403 Forbidden status\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(403);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PATCH",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"id\": 3092,\r\n    \"title\": \"{{$randomNoun}}\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/categories",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"categories"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Teacher can't delete category",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request returns 403 Forbidden status\r",
+															"pm.test(\"403 Forbiddent status\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(403);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/categories/3092",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"categories",
+														"3092"
+													]
+												}
+											},
+											"response": []
+										}
+									],
+									"auth": {
+										"type": "bearer",
+										"bearer": [
+											{
+												"key": "token",
+												"value": "{{Teacher bearer token}}",
+												"type": "string"
+											}
+										]
+									},
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													""
+												]
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													""
+												]
+											}
+										}
+									]
+								},
+								{
+									"name": "Student AND categories",
+									"item": [
+										{
+											"name": "Student can get all categories",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request is successful.\r",
+															"pm.test(\"Successful POST request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(200);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/categories",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"categories"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Student can get category by id",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request is successful.\r",
+															"pm.test(\"Successful POST request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(200);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/categories/4453",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"categories",
+														"4453"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Student can't create category",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request returns 403 Forbidden status\r",
+															"pm.test(\"403 Forbidden status\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(403);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"title\": \"{{$randomNoun}}\"\r\n}\r\n",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/categories",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"categories"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Student can't edit categories",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request returns 403 Forbidden status\r",
+															"pm.test(\"403 Forbiddent status\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(403);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PATCH",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"id\": 3092,\r\n    \"title\": \"{{$randomNoun}}\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/categories",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"categories"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Student can't delete categories",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request returns 403 Forbidden status\r",
+															"pm.test(\"403 Forbiddent status\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(403);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/categories/4453",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"categories",
+														"4453"
+													]
+												}
+											},
+											"response": []
+										}
+									],
+									"auth": {
+										"type": "bearer",
+										"bearer": [
+											{
+												"key": "token",
+												"value": "{{Student bearer token}}",
+												"type": "string"
+											}
+										]
+									},
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													""
+												]
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													""
+												]
+											}
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Courses",
+							"item": [
+								{
+									"name": "Teacher AND courses",
+									"item": [
+										{
+											"name": "Teacher can see all courses Copy",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request is successful\r",
+															"pm.test(\"Successful POST request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response objects have 'id' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    response.forEach(item => {\r",
+															"        pm.expect(item).to.have.property(\"id\");\r",
+															"    });\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response objects have 'title' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    response.forEach(item => {\r",
+															"        pm.expect(item).to.have.property(\"title\");\r",
+															"    });\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response objects have 'description' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    response.forEach(item => {\r",
+															"        pm.expect(item).to.have.property(\"description\");\r",
+															"    });\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response objects have 'visible' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    response.forEach(item => {\r",
+															"        pm.expect(item).to.have.property(\"visible\");\r",
+															"    });\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response objects have 'categoryId' field\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"    response.forEach(item => {\r",
+															"        pm.expect(item).to.have.property(\"categoryId\");\r",
+															"    });\r",
+															"});\r",
+															"\r",
+															"//This test fails as there is descrepancy between the documentation and actual response. The actual response contains two extra fields 'likes' and 'dislikes'\r",
+															"pm.test(\"Response objects have exactly 5 fields\", function () {\r",
+															"    const response = pm.response.json();\r",
+															"\r",
+															"    response.forEach(item => {\r",
+															"        const fieldCount = Object.keys(item).length;\r",
+															"        pm.expect(fieldCount).to.equal(5);\r",
+															"    });\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Teacher bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/courses",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"courses"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Teacher can get course by ID Copy",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request is successful\r",
+															"pm.test(\"Successful POST request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Teacher bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/courses/6002",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"courses",
+														"6002"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Teacher can create a course",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request is successful\r",
+															"pm.test(\"Successful POST request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(200);\r",
+															"});\r",
+															"\r",
+															"//check if the response body has all the fields given in the documentation.\r",
+															"//This test will FAIL as there is a bug\r",
+															"pm.test(\"Check response fields for completeness\", function () {\r",
+															"    const responseBody = pm.response.json();\r",
+															"    const expectedFields = [\"id\", \"title\", \"categoryId\", \"description\", \"visible\", \"updatedAt\", \"createdAt\"];\r",
+															"    expectedFields.forEach(function (field) {\r",
+															"        pm.expect(responseBody).to.have.property(field);\r",
+															"    });\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript"
+													}
+												},
+												{
+													"listen": "prerequest",
+													"script": {
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Teacher bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"title\": \"{{$randomAdjective}} {{$randomBsNoun}}\",\r\n    \"description\": \"{{$randomCatchPhraseDescriptor}}\",\r\n    \"visible\": true,\r\n    \"categoryId\": 4453\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/courses",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"courses"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Teacher can delete a course",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request is successful\r",
+															"//Test will not fail if the user trying to delete an existing course\r",
+															"//Test will fail if the course does not exist\r",
+															"pm.test(\"Successful POST request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(200);\r",
+															"});\r",
+															"\r",
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Teacher bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "DELETE",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/courses/7204",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"courses",
+														"7204"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Teacher can get created courses",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request is successful\r",
+															"//Test will not fail if the user trying to delete an existing course\r",
+															"//Test will fail if the course does not exist\r",
+															"pm.test(\"Successful POST request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(200);\r",
+															"});\r",
+															"\r",
+															"//check if the response body has all the fields given in the documentation.\r",
+															"//Checking the first entry of the response body array. I guess this test will fail if are no courses created by this teacher. \r",
+															"pm.test(\"Check response fields for completeness\", function () {\r",
+															"    const responseBody = pm.response.json();\r",
+															"pm.expect(responseBody[0]).to.have.property('userId');\r",
+															"pm.expect(responseBody[0]).to.have.property('courseId');\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Teacher bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/courses/mine",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"courses",
+														"mine"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Teacher can't enroll in a course",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request return has correct status 403 Forbidden\r",
+															"pm.test(\"403 Forbidden request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.oneOf([403]);\r",
+															"});\r",
+															"\r",
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Teacher bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/courses/7205/enroll",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"courses",
+														"7205",
+														"enroll"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Teacher can't leave a course Copy",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request return correct status 403 Forbidden\r",
+															"pm.test(\"403 Forbidden request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.oneOf([403]);\r",
+															"});\r",
+															"\r",
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Teacher bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/courses/7205/leave",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"courses",
+														"7205",
+														"leave"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Teacher can change course",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request is successful\r",
+															"pm.test(\"Successful POST request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);\r",
+															"});\r",
+															"\r",
+															"//check if the response body has all the fields given in the documentation.\r",
+															"//This test will FAIL as there is a bug. The \"likes\" and \"dislikes\" fields are missing from the response body\r",
+															"pm.test(\"Check response fields for completeness\", function () {\r",
+															"    const responseBody = pm.response.json();\r",
+															"    const expectedFields = [\"id\", \"title\", \"description\", \"visible\", \"categoryId\", \"likes\", \"dislikes\"];\r",
+															"    expectedFields.forEach(function (field) {\r",
+															"        pm.expect(responseBody).to.have.property(field);\r",
+															"    });\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Teacher bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "PATCH",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"id\": 7205,\r\n  \"title\": \"{{$randomAdjective}} {{$randomNoun}} \",\r\n  \"description\": \"{{$randomCatchPhraseDescriptor}}\",\r\n  \"visible\": {{$randomBoolean}},\r\n  \"categoryId\": 3211\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/courses",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"courses"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Teacher can't change non-existent course Copy",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request returns proper status 404 Not found\r",
+															"pm.test(\"404 Not found request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(404)\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Teacher bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "PATCH",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"id\": 7305,\r\n  \"title\": \"{{$randomAdjective}} {{$randomNoun}} \",\r\n  \"description\": \"{{$randomCatchPhraseDescriptor}}\",\r\n  \"visible\": {{$randomBoolean}},\r\n  \"categoryId\": 3211\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/courses",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"courses"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Teacher can't change course to non-existent category Copy",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request returns proper status 404 Not found\r",
+															"//The actual request returns 400 Bad request, should it be 404 not found? as there is no such category?- ask BA\r",
+															"pm.test(\"400 Bad request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(400)\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Teacher bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "PATCH",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"id\": 7205,\r\n  \"title\": \"{{$randomAdjective}} {{$randomNoun}} \",\r\n  \"description\": \"{{$randomCatchPhraseDescriptor}}\",\r\n  \"visible\": {{$randomBoolean}},\r\n  \"categoryId\": 5000\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/courses",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"courses"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Student AND courses",
+									"item": [
+										{
+											"name": "Student can see all courses Copy",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request is successful\r",
+															"pm.test(\"Successful POST request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);\r",
+															"});\r",
+															"\r",
+															"//check if the response body has all the fields given in the documentation.\r",
+															"pm.test(\"Check response fields for completeness\", function () {\r",
+															"    const responseBody = pm.response.json();\r",
+															"    const expectedFields = [\"id\", \"title\", \"description\", \"visible\", \"categoryId\", \"likes\", \"dislikes\"];\r",
+															"    expectedFields.forEach(function (field) {\r",
+															"        pm.expect(responseBody[0]).to.have.property(field);\r",
+															"    });\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Student bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/courses",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"courses"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Student can see course by Id",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request is successful\r",
+															"pm.test(\"Successful POST request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);\r",
+															"});\r",
+															"\r",
+															"//check if the response body has all the fields given in the documentation.\r",
+															"pm.test(\"Check response fields for completeness\", function () {\r",
+															"    const responseBody = pm.response.json();\r",
+															"    const expectedFields = [\"id\", \"title\", \"description\", \"visible\", \"categoryId\", \"likes\", \"dislikes\"];\r",
+															"    expectedFields.forEach(function (field) {\r",
+															"        pm.expect(responseBody).to.have.property(field);\r",
+															"    });\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Student bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/courses/6002",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"courses",
+														"6002"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Student can't see course by Id 0 Copy",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request is successful\r",
+															"pm.test(\"404 Not found request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.oneOf([404]);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Error message\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.errors).to.eql(\"Unable to find course record(s)\");\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Student bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/courses/0",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"courses",
+														"0"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Student can't see non-existent course Copy",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request returns correct status\r",
+															"pm.test(\"404 Not found request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.oneOf([404]);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Error message\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.errors).to.eql(\"Unable to find course record(s)\");\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Student bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/courses/100000",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"courses",
+														"100000"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Student can't see a hidden course",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request returns correct status\r",
+															"pm.test(\"404 Not found request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.oneOf([404]);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Error message\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.errors).to.eql(\"Unable to find course record(s)\");\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Student bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/courses/6340",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"courses",
+														"6340"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Student can enroll in a course Copy",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request is successful\r",
+															"pm.test(\"Successful POST request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);\r",
+															"});\r",
+															"\r",
+															"//Passes if the student is enrolling in a new course\r",
+															"//Fails if the student is already enrolled in the course\r",
+															"pm.test(\"Enrolled successfully message\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.result).to.eql(\"You've successfully enrolled the course\");\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Student bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/courses/6002/enroll",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"courses",
+														"6002",
+														"enroll"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Student can leave  a course",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request is successful\r",
+															"pm.test(\"Successful POST request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);\r",
+															"});\r",
+															"\r",
+															"//Passes if the student is enrolling in a new course\r",
+															"//Fails if the student is already enrolled in the course\r",
+															"pm.test(\"Enrolled successfully message\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.result).to.eql(\"You've successfully left the course\");\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Student bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/courses/6002/leave",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"courses",
+														"6002",
+														"leave"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Student can't enroll in non-existent course Copy",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"// testing if the length of the request is less than 5 seconds\r",
+															"pm.test(\"Response time is less than 5000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+															"});\r",
+															"\r",
+															"// testing if request has correct status\r",
+															"// Should it be 404 not found?\r",
+															"pm.test(\"Request status 404\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.equal(404);\r",
+															"});\r",
+															"\r",
+															"//Passes if the student is enrolling in a new course\r",
+															"//Fails if the student is already enrolled in the course\r",
+															"pm.test(\"Error message\", function () {\r",
+															"    var jsonData = pm.response.json();\r",
+															"    pm.expect(jsonData.errors[0].msg).to.eql(\"Unable to find course record(s)\");\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{Student bearer token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{host}}/api/v1/courses/82005/enroll",
+													"host": [
+														"{{host}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"courses",
+														"82005",
+														"enroll"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Scenario 1 Admin",
+							"item": [
+								{
+									"name": "Get admin token e2e",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// testing if the length of the request is less than 1 second\r",
+													"pm.test(\"Response time is less than 5000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+													"});\r",
+													"\r",
+													"// testing if request is successful\r",
+													"pm.test(\"Successful POST request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.equal(200);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"Lyazzat.M\",\r\n    \"password\": \"StrongPassword123!\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/api/v1/session",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"session"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get a list of teachers",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// testing if the length of the request is less than 1 second\r",
+													"pm.test(\"Response time is less than 5000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+													"});\r",
+													"\r",
+													"// testing if request is successful\r",
+													"pm.test(\"Successful POST request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.equal(200);\r",
+													"});\r",
+													"\r",
+													"//Testing if all fields are present in the response\r",
+													"pm.test(\"Response objects have 'id' field\", function () {\r",
+													"    const response = pm.response.json();\r",
+													"    response.forEach(item => {\r",
+													"        pm.expect(item).to.have.property(\"id\");\r",
+													"    });\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response objects have 'username' field\", function () {\r",
+													"    const response = pm.response.json();\r",
+													"    response.forEach(item => {\r",
+													"        pm.expect(item).to.have.property(\"username\");\r",
+													"    });\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response objects have 'email' field\", function () {\r",
+													"    const response = pm.response.json();\r",
+													"    response.forEach(item => {\r",
+													"        pm.expect(item).to.have.property(\"email\");\r",
+													"    });\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response objects have 'firstName' field\", function () {\r",
+													"    const response = pm.response.json();\r",
+													"    response.forEach(item => {\r",
+													"        pm.expect(item).to.have.property(\"firstName\");\r",
+													"    });\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response objects have 'lastName' field\", function () {\r",
+													"    const response = pm.response.json();\r",
+													"    response.forEach(item => {\r",
+													"        pm.expect(item).to.have.property(\"lastName\");\r",
+													"    });\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response objects have 'role' field\", function () {\r",
+													"    const response = pm.response.json();\r",
+													"    response.forEach(item => {\r",
+													"        pm.expect(item).to.have.property(\"role\");\r",
+													"    });\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/api/v1/teachers",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"teachers"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "New Request",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// testing if the length of the request is less than 5 seconds\r",
+													"pm.test(\"Response time is less than 5000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+													"});\r",
+													"\r",
+													"// testing if request is successful\r",
+													"pm.test(\"Successful POST request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.equal(200);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"id\": \"353\",\r\n  \"username\": \"{{$randomAdjective}}{{$randomAlphaNumeric}}\",\r\n  \"email\": \"{{$randomEmail}}\",\r\n  \"role\": 2,\r\n  \"firstName\": \"{{$randomNoun}}\",\r\n  \"lastName\": \"{{$randomAdjective}}\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/api/v1/teachers",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"teachers"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Admin bans a user",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// testing if the length of the request is less than 5 seconds\r",
+													"pm.test(\"Response time is less than 5000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+													"});\r",
+													"\r",
+													"// testing if request is successful\r",
+													"pm.test(\"Successful POST request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.equal(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check if the 'result' field is populated\", function () {\r",
+													"    const responseBody = pm.response.json();\r",
+													"\r",
+													"    // Check if the 'result' field is not empty\r",
+													"    pm.expect(responseBody.result).to.not.be.empty;\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check if the 'reason' field is populated\", function () {\r",
+													"    const responseBody = pm.response.json();\r",
+													"\r",
+													"    // Check if the 'reason' field is not empty\r",
+													"    pm.expect(responseBody.reason).to.not.be.empty;\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check if the 'createdBy' field is populated\", function () {\r",
+													"    const responseBody = pm.response.json();\r",
+													"\r",
+													"    // Check if the 'createdBy' field is not empty\r",
+													"    pm.expect(responseBody.createdBy).to.not.be.empty;\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check if userId is a number\", function () {\r",
+													"    const responseBody = pm.response.json();\r",
+													"\r",
+													"    pm.expect(responseBody.userId).to.be.a('number');\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check if isBanned is equal to true\", function () {\r",
+													"    const responseBody = pm.response.json();\r",
+													"\r",
+													"    pm.expect(responseBody.isBanned).to.equal(true);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"reason\": \"Admin does not like this particular teacher\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/api/v1/change-user-ban?userId=353&ban=true",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"change-user-ban"
+											],
+											"query": [
+												{
+													"key": "userId",
+													"value": "353"
+												},
+												{
+													"key": "ban",
+													"value": "true"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Admin unbans a user",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// testing if the length of the request is less than 5 seconds\r",
+													"pm.test(\"Response time is less than 5000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+													"});\r",
+													"\r",
+													"// testing if request is successful\r",
+													"pm.test(\"Successful POST request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.equal(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check if the 'result' field is populated\", function () {\r",
+													"    const responseBody = pm.response.json();\r",
+													"\r",
+													"    // Check if the 'result' field is not empty\r",
+													"    pm.expect(responseBody.result).to.not.be.empty;\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check if the 'reason' field is populated\", function () {\r",
+													"    const responseBody = pm.response.json();\r",
+													"\r",
+													"    // Check if the 'reason' field is not empty\r",
+													"    pm.expect(responseBody.reason).to.not.be.empty;\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check if the 'createdBy' field is populated\", function () {\r",
+													"    const responseBody = pm.response.json();\r",
+													"\r",
+													"    // Check if the 'createdBy' field is not empty\r",
+													"    pm.expect(responseBody.createdBy).to.not.be.empty;\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check if userId is a number\", function () {\r",
+													"    const responseBody = pm.response.json();\r",
+													"\r",
+													"    pm.expect(responseBody.userId).to.be.a('number');\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check if isBanned is equal to false\", function () {\r",
+													"    const responseBody = pm.response.json();\r",
+													"\r",
+													"    pm.expect(responseBody.isBanned).to.equal(false);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"reason\": \"They made up and now they are friends\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/api/v1/change-user-ban?userId=353&ban=false",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"change-user-ban"
+											],
+											"query": [
+												{
+													"key": "userId",
+													"value": "353"
+												},
+												{
+													"key": "ban",
+													"value": "false"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"description": "Admin is a good guy but sometimes he does not like teachers. There is one particular teacher he did not like. He finds this teacher from the list, edits teacher's credentials and bans him from the software. Admin soon realized his error. The banished teacher was actually a gem of a soul. Guilt washed over Admin like a tidal wave. In a hasty act of redemption, he reversed the spell and unbanned the teacher, hoping to mend the mishap. They became best friends afterwards.",
+							"auth": {
+								"type": "bearer",
+								"bearer": [
+									{
+										"key": "token",
+										"value": "{{Admin bearer token}}",
+										"type": "string"
+									}
+								]
+							},
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							]
+						},
+						{
+							"name": "Scenario 2 Teacher",
+							"item": [
+								{
+									"name": "Get a teacher token e2e",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// testing if the length of the request is less than 1 second\r",
+													"pm.test(\"Response time is less than 5000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+													"});\r",
+													"\r",
+													"// testing if request is successful\r",
+													"pm.test(\"Successful POST request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.equal(200);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"AwesomeTeacher1\",\r\n    \"password\": \"StrongPassword123!\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/api/v1/session",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"session"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Teacher can read categories Copy",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// testing if the length of the request is less than 5 seconds\r",
+													"pm.test(\"Response time is less than 5000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+													"});\r",
+													"\r",
+													"// testing if request is successful. \r",
+													"pm.test(\"Successful POST request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.equal(200);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/api/v1/categories",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"categories"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Teacher can create a course Copy",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// testing if the length of the request is less than 5 seconds\r",
+													"pm.test(\"Response time is less than 5000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+													"});\r",
+													"\r",
+													"// testing if request is successful\r",
+													"pm.test(\"Successful POST request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.equal(200);\r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										},
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"title\": \"{{$randomAdjective}} {{$randomBsNoun}}\",\r\n    \"description\": \"{{$randomCatchPhraseDescriptor}}\",\r\n    \"visible\": true,\r\n    \"categoryId\": 4453\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/api/v1/courses",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"courses"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Teacher can get created courses Copy",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// testing if the length of the request is less than 5 seconds\r",
+													"pm.test(\"Response time is less than 5000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+													"});\r",
+													"\r",
+													"// testing if request is successful\r",
+													"//Test will not fail if the user trying to delete an existing course\r",
+													"//Test will fail if the course does not exist\r",
+													"pm.test(\"Successful POST request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.equal(200);\r",
+													"});\r",
+													"\r",
+													"//check if the response body has all the fields given in the documentation.\r",
+													"//Checking the first entry of the response body array. I guess this test will fail if are no courses created by this teacher. \r",
+													"pm.test(\"Check response fields for completeness\", function () {\r",
+													"    const responseBody = pm.response.json();\r",
+													"pm.expect(responseBody[0]).to.have.property('userId');\r",
+													"pm.expect(responseBody[0]).to.have.property('courseId');\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/api/v1/courses/mine",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"courses",
+												"mine"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Teacher can change course Copy",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// testing if the length of the request is less than 5 seconds\r",
+													"pm.test(\"Response time is less than 5000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+													"});\r",
+													"\r",
+													"// testing if request is successful\r",
+													"pm.test(\"Successful POST request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"id\": 7205,\r\n  \"title\": \"{{$randomAdjective}} {{$randomNoun}} \",\r\n  \"description\": \"{{$randomCatchPhraseDescriptor}}\",\r\n  \"visible\": true,\r\n  \"categoryId\": 3211\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/api/v1/courses",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"courses"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Teacher add course material",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// testing if the length of the request is less than 5 seconds\r",
+													"pm.test(\"Response time is less than 5000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+													"});\r",
+													"\r",
+													"// testing if request is successful\r",
+													"pm.test(\"Successful POST request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Check if the response has the required fields\", function () {\r",
+													"    const responseBody = pm.response.json();\r",
+													"\r",
+													"    pm.expect(responseBody).to.have.property('id');\r",
+													"    pm.expect(responseBody).to.have.property('title');\r",
+													"    pm.expect(responseBody).to.have.property('data');\r",
+													"    pm.expect(responseBody).to.have.property('order');\r",
+													"    pm.expect(responseBody).to.have.property('courseId');\r",
+													"});\r",
+													"\r",
+													"//This test is expected to fail as there is a bug (already reported)\r",
+													"pm.test(\"Check if the response has updatedAt and createdAt fields\", function () {\r",
+													"    const responseBody = pm.response.json();\r",
+													"    pm.expect(responseBody).to.have.property('updatedAt');\r",
+													"    pm.expect(responseBody).to.have.property('createdAt');\r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"title\": \"Course Material\",\r\n  \"data\": \"Postman {{$randomAdjective}}\",\r\n  \"order\": 0\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/api/v1/courses/7205/materials",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"courses",
+												"7205",
+												"materials"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"description": "Here we have an ordinary teacher who just does his/her job. That's it. Nothing unusual.",
+							"auth": {
+								"type": "bearer",
+								"bearer": [
+									{
+										"key": "token",
+										"value": "{{Teacher bearer token}}",
+										"type": "string"
+									}
+								]
+							},
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							]
+						},
+						{
+							"name": "Scenario 3 Student",
+							"item": [
+								{
+									"name": "Get a student token e2e",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// testing if the length of the request is less than 1 second\r",
+													"pm.test(\"Response time is less than 5000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+													"});\r",
+													"\r",
+													"// testing if request is successful\r",
+													"pm.test(\"Successful POST request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.equal(200);\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"AwesomeStudent1\",\r\n    \"password\": \"StrongPassword123!\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/api/v1/session",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"session"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Student can get all categories Copy",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// testing if the length of the request is less than 5 seconds\r",
+													"pm.test(\"Response time is less than 5000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+													"});\r",
+													"\r",
+													"// testing if request is successful.\r",
+													"pm.test(\"Successful POST request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.equal(200);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/api/v1/categories",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"categories"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Student can see all courses Copy 2",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// testing if the length of the request is less than 5 seconds\r",
+													"pm.test(\"Response time is less than 5000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+													"});\r",
+													"\r",
+													"// testing if request is successful\r",
+													"pm.test(\"Successful POST request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);\r",
+													"});\r",
+													"\r",
+													"//check if the response body has all the fields given in the documentation.\r",
+													"pm.test(\"Check response fields for completeness\", function () {\r",
+													"    const responseBody = pm.response.json();\r",
+													"    const expectedFields = [\"id\", \"title\", \"description\", \"visible\", \"categoryId\", \"likes\", \"dislikes\"];\r",
+													"    expectedFields.forEach(function (field) {\r",
+													"        pm.expect(responseBody[0]).to.have.property(field);\r",
+													"    });\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/api/v1/courses",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"courses"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Student can see course by Id Copy",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// testing if the length of the request is less than 5 seconds\r",
+													"pm.test(\"Response time is less than 5000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+													"});\r",
+													"\r",
+													"// testing if request is successful\r",
+													"pm.test(\"Successful POST request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);\r",
+													"});\r",
+													"\r",
+													"//check if the response body has all the fields given in the documentation.\r",
+													"pm.test(\"Check response fields for completeness\", function () {\r",
+													"    const responseBody = pm.response.json();\r",
+													"    const expectedFields = [\"id\", \"title\", \"description\", \"visible\", \"categoryId\", \"likes\", \"dislikes\"];\r",
+													"    expectedFields.forEach(function (field) {\r",
+													"        pm.expect(responseBody).to.have.property(field);\r",
+													"    });\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/api/v1/courses/7346",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"courses",
+												"7346"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Student can enroll in a course Copy 2",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// testing if the length of the request is less than 5 seconds\r",
+													"pm.test(\"Response time is less than 5000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+													"});\r",
+													"\r",
+													"// testing if request is successful\r",
+													"pm.test(\"Successful POST request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);\r",
+													"});\r",
+													"\r",
+													"//Passes if the student is enrolling in a new course\r",
+													"//Fails if the student is already enrolled in the course\r",
+													"pm.test(\"Enrolled successfully message\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.result).to.eql(\"You've successfully enrolled the course\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/api/v1/courses/7346/enroll",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"courses",
+												"7346",
+												"enroll"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Student tries to delete the course",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// testing if the length of the request is less than 5 seconds\r",
+													"pm.test(\"Response time is less than 5000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+													"});\r",
+													"\r",
+													"// testing if request status returns 403 Forbidden\r",
+													"pm.test(\"Forbidden\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.equal(403);\r",
+													"});\r",
+													"\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/api/v1/courses/7346",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"courses",
+												"7346"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Student can leave a course",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// testing if the length of the request is less than 5 seconds\r",
+													"pm.test(\"Response time is less than 5000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+													"});\r",
+													"\r",
+													"// testing if request is successful\r",
+													"pm.test(\"Successful POST request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.equal(200);\r",
+													"});\r",
+													"\r",
+													"\r",
+													"pm.test(\"You've successfully left the course\", function () {\r",
+													"    var jsonData = pm.response.json();\r",
+													"    pm.expect(jsonData.result).to.eql(\"You've successfully left the course\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{Student bearer token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/api/v1/courses/7346/leave",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"courses",
+												"7346",
+												"leave"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"description": "In the enchanted realm of online learning, diligent student Bob embarked on a quest to explore every course in \"Enchanted Academia.\" But a challenging course left Bob with less-than-magical grades. Rather than dropping the course, he hatched a plan to erase his failures by deleting the entire course itself. However, the digital wizards guarding the academy were too clever to fall for such mischief. Bob's grades remained, and he soon realized the folly of his attempt. With wisdom in his heart, Bob decided to leave the course peacefully, understanding that knowledge comes with its ups and downs. In the magical world of learning, every experience is a treasure, even the ones that make you ponder if your wand is truly magical or just a carrot in disguise.",
+							"auth": {
+								"type": "bearer",
+								"bearer": [
+									{
+										"key": "token",
+										"value": "{{Student bearer token}}",
+										"type": "string"
+									}
+								]
+							},
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://qa-school-test.quantori.academy",
+			"type": "string"
+		},
+		{
+			"key": "Admin username",
+			"value": "Lyazzat.M",
+			"type": "string"
+		},
+		{
+			"key": "Password",
+			"value": "StrongPassword123!",
+			"type": "string"
+		},
+		{
+			"key": "Teacher username",
+			"value": "AwesomeTeacher1",
+			"type": "string"
+		},
+		{
+			"key": "Student username",
+			"value": "AwesomeStudent1",
+			"type": "string"
+		},
+		{
+			"key": "Admin bearer token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIxNjksInJvbGVJZCI6MywiaWF0IjoxNjk1MDM5Mzg3LCJleHAiOjE2OTUwNDY1ODd9.AVsZVYDYnsaiggDeU5BOi8FBO9n9yW-avRGZtN3cSyw",
+			"type": "string"
+		},
+		{
+			"key": "Teacher bearer token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExNDAsInJvbGVJZCI6MiwiaWF0IjoxNjk1MDM5NDA1LCJleHAiOjE2OTUwNDY2MDV9.Ds6nrZiAQCX6ptUp8En0M7wVQX0Dfv7BpjgqK3sUhZI",
+			"type": "string"
+		},
+		{
+			"key": "Student bearer token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExNDEsInJvbGVJZCI6MSwiaWF0IjoxNjk1MDM5NDI4LCJleHAiOjE2OTUwNDY2Mjh9.fV3gnuZ7SQjcZtNNs-Kq6rSAMHiX_C517R-kX5iWyDM",
+			"type": "string"
+		},
+		{
+			"key": "Teacher ids",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
