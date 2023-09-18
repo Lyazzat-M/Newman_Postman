@@ -1,4 +1,4 @@
-name: Postman collection workflow
+name: Postman collection workflow test
 on:
   push:
     branches:
