@@ -5562,17 +5562,17 @@
 		},
 		{
 			"key": "Admin bearer token",
-			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIxNjksInJvbGVJZCI6MywiaWF0IjoxNjk1MDU1NTc4LCJleHAiOjE2OTUwNjI3Nzh9.uiI1DpbDFEctzD5Xa9fAw1QzBCx5dKkPTkcal7su7xQ",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIxNjksInJvbGVJZCI6MywiaWF0IjoxNjk1MTMzMzYzLCJleHAiOjE2OTUxNDA1NjN9.BQpc6a4yHAXpChpiualzqVJXoXF8dks0C3zLBYGmcYo",
 			"type": "string"
 		},
 		{
 			"key": "Teacher bearer token",
-			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExNDAsInJvbGVJZCI6MiwiaWF0IjoxNjk1MDU1NjAwLCJleHAiOjE2OTUwNjI4MDB9.Z-yBg6TENEMIMBa3V_S_Y2qHgQ37C9TyTE-DZo7rviM",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExNDAsInJvbGVJZCI6MiwiaWF0IjoxNjk1MTMzMzgwLCJleHAiOjE2OTUxNDA1ODB9.04E7ucpo3SqbpFcGdvoyRp7tDN0zUZBXwqtRI-zgsFg",
 			"type": "string"
 		},
 		{
 			"key": "Student bearer token",
-			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExNDEsInJvbGVJZCI6MSwiaWF0IjoxNjk1MDU1NjE3LCJleHAiOjE2OTUwNjI4MTd9.8nok_tHjL9_lFHaQiyJvPvNCsPMUfZ3Z40RlU9t90nA",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExNDEsInJvbGVJZCI6MSwiaWF0IjoxNjk1MTMzMzk3LCJleHAiOjE2OTUxNDA1OTd9.5_3fJtDuesiebreYbdn8hYxCB0xliSDZ2rHDGuZmrfM",
 			"type": "string"
 		},
 		{
